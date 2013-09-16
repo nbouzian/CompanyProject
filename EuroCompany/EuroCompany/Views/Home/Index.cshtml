@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EuroCompany.ViewModels.CompanyListViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Index</h2>
+<div class="row-fluid">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-inline" }))
+    {
+        <div class="span4">
+            <label class="span4" for="NameSearchCriteria">Name :</label><input class="span6 offset4"type="text" value="@ViewBag.NameCriteria"  placeholder="Search by Name"  name="NameSearchCriteria" id="NameSearchCriteria"/>
+        </div>
+        <div class="span4">
+            <label class="span4" for="MailSearchCriteria">Mail :</label><input  class="span6 offset4" type="text"  value="@ViewBag.MailCriteria"  name="MailSearchCriteria" id="MailSearchCriteria"/>
+        </div>
+        <div class="span4">
+            <label class="span4" for="MarketSearchCriteria">Market :</label>@Html.DropDownList("MarketSearchCriteria", ViewBag.ListeMarket as List<SelectListItem>, new { @class="span6 offset4" })
+        </div>
+        <div class="row-fluid">
+            <button type="submit" class="btn btn-primary span12">Search <i class="icon-search icon-white"></i></button>
+        </div>
+    }
+</div>
+<div class="row-fluid">
+    <ul class="thumbnails">
+        @foreach (var item in Model)
+        {
+            
+            <li class="span2 clearfix">
+                @Html.DisplayFor(modelitem => item)
+            </li>
+        }
+    </ul>
+</div>
+@section Script{
+    <script type="text/javascript">
+
+        $(".CompanyCard").click(function () {
+            location.href = $(this).data("action-url");
+        });
+    </script>
+}

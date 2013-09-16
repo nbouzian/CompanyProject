@@ -1,0 +1,28 @@
+﻿@model EuroCompany.ViewModels.CompanyListViewModel
+@*<div class="thumbnail clearfix CompanyCard" data-action-url="@Url.Action("Detail",  new {Id = Model.ID })">
+    <img src="http://placehold.it/320x200" alt="logo" class="span4 pull-left clearfix" style='margin-right:10px'>
+    <div class="caption">
+      <a href="#" class="btn btn-primary icon pull-right">Edit</a>
+        @Html.ActionLink("Show details", "Detail", new {Id = Model.ID })
+      <h4>      
+     @Html.DisplayFor(model=>Model.Name)
+      </h4>
+    </div>
+  </div>*@
+<div class="thumbnail  CompanyCard @Model.Market" data-action-url="@Url.Action("Detail", new { Id = Model.ID, mode = "Detail" })">
+    @if (Model.Logo != null)
+    { 
+        <img  width="320" height="150" src="data:image;base64,@Convert.ToBase64String(Model.Logo)" />
+    }
+    else
+    {
+        <img src="http://placehold.it/320x200" alt="logo">
+    }
+    <div class="caption">
+        <h5>@Html.DisplayFor(model => Model.Name)</h5>
+        <p class="pull-left ">
+            @Html.ActionLink("Edit", "Detail", new { Id = Model.ID, mode = "Edit" }, new { @class = "btn btn-primary" })
+        </p>
+
+    </div>
+</div>

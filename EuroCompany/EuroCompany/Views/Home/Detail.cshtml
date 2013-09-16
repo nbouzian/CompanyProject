@@ -1,0 +1,57 @@
+﻿@model EuroCompany.ViewModels.CompanyDetailViewModel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="row-fluid">
+
+        <div class="alert alert-error">
+            <a type="button" class="close" data-dismiss="alert">&times;</a>
+            @ViewBag.ErrorMessage
+        </div>
+        <h4>Sorry for this issue try to reload this page if the error persist contact your web administrator. Go Back to the  @Html.ActionLink( " Index Page ...","Index") </h4>
+    </div>
+}else{
+
+<div class="row-fluid">
+    <h2>Identity Card @Model.Name</h2>
+
+    <ul id="myTab" class="nav nav-tabs">
+        <li id="DetailLink"><a href="#Detail" data-toggle="tab">Detail</a></li>
+        <li id="EditLink"><a href="#Edit" data-toggle="tab">Edit</a></li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade" id="Detail">
+            @Html.Partial("DetailPan", Model)
+        </div>
+        <div class="tab-pane fade" id="Edit">
+            @Html.Action("Edit", new { Id = Model.ID })
+        </div>
+    </div>
+
+</div>
+@section Script{
+    <script type="text/javascript">
+                @if (ViewBag.Mode == "Edit")
+                {
+                    @:$("#Edit").addClass("in active");
+                            @:$("#EditLink").addClass("active");
+                }
+                else
+                { 
+                    @:$("#Detail").addClass("in active");
+                            @:$("#DetailLink").addClass("in active");
+
+                }
+        $("#myTab a").click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+    </script>
+}
+}

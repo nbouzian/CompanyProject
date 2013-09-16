@@ -1,0 +1,40 @@
+﻿body {
+}
+.CompanyCard:hover{
+border: 1px solid #0094ff;
+cursor:pointer;
+}
+.CompanyCard {
+white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ul.thumbnails li.span2:nth-child(6n+1) {
+  margin-left : 0px;
+}
+.MarginTop {
+    margin-top:40px;
+}
+/*.row-fluid > .span4:nth-child(4) {
+    margin-left:0;
+}*/
+
+.Finance:hover {
+border-color:#ff006e;
+}
+
+.Health:hover {
+border-color:#00ff21;
+}
+.ICT:hover  {
+border-color:#b200ff;
+}
+.Advertising:hover {
+    border-color:#ffd800;
+}
+/*#btnSubmitContainer {
+    width:100%;
+}
+#btnSubmitContainer input{
+    width:50%;
+}*/

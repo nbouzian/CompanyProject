@@ -1,0 +1,10 @@
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\InterfaceServices.dll
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\InterfaceServices.pdb
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\Model.dll
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\EntityFramework.dll
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\Model.pdb
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\EntityFramework.xml
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\bin\Debug\fr\EntityFramework.resources.dll
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\obj\Debug\InterfaceServices.csprojResolveAssemblyReference.cache
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\obj\Debug\InterfaceServices.dll
+c:\users\yva\documents\visual studio 2012\Projects\EuroCompany\InterfaceServices\obj\Debug\InterfaceServices.pdb

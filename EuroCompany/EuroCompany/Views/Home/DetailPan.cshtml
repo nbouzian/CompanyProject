@@ -1,0 +1,63 @@
+﻿@model EuroCompany.ViewModels.CompanyDetailViewModel
+
+<div class="row-fluid">
+
+    <div class="span6">
+        <div class="span6">
+
+            <div class="display-label">
+                <h6>
+                    @Html.DisplayNameFor(model => model.Name)
+                </h6>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+            <div class="display-label">
+                <h6>
+                    @Html.DisplayNameFor(model => model.Mail)
+                </h6>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Mail)
+            </div>
+
+        </div>
+        <div class="span6">
+            @if (Model.Logo != null)
+            { 
+                    
+                <img src="data:image;base64,@Convert.ToBase64String(Model.Logo)" />
+            }
+            else
+            {
+                <img src="http://placehold.it/320x200" alt="logo">
+            }
+        </div>
+    </div>
+
+    <div class="span6">
+        <h4>Competitor in @Model.Market</h4>
+        <table class="table table-striped table-condensed">
+            <thead>
+                <td>
+                    @Html.DisplayNameFor(model => model.Name)
+                </td>
+                <td></td>
+            </thead>
+            @foreach (var c in Model.competitors)
+            { 
+                <tr>
+                    <td class="">
+
+                        @c.Value
+                    </td>
+                    <td class="">
+                        @Html.ActionLink("show more details", "Detail", new { Id = c.Key, mode = "Detail" })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</div>
