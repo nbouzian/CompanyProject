@@ -41,8 +41,7 @@ namespace DAO
             return company;
         }
 
-
-
+        //dans cette methode gestion des recherches multis criteres 
         public List<Company> GetCompanyByCriteria(string NameSearchCriteria, string MarketSearchCriteria, string MailSearchCriteria)
         {
             List<Company> allCompany = new List<Company>();

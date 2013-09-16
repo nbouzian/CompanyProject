@@ -16,7 +16,7 @@ namespace EuroCompany.ViewModels
         public string Name { get; set; }
 
         public string Market { get; set; }
-        [EmailAddress]
+        [EmailAddress(ErrorMessage="Wrong email format")]
         public string Mail { get; set; }
 
         public byte[] Logo { get; set; }

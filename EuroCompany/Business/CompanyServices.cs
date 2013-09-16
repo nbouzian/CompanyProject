@@ -22,10 +22,11 @@ namespace Business
             return companyDao.GetCompagnyByID(ID);
         }
 
-
+        //Toutes les recherches sont inclusives et non "strictes" methode contains utilisée au lieu de equals...
         public List<Company> GetCompanyByCriteria(string NameSearchCriteria, string MarketSearchCriteria, string MailSearchCriteria)
         {
             CompanyDAOEntity companyDao = new CompanyDAOEntity();
+
             if ((!string.IsNullOrEmpty(NameSearchCriteria)) && string.IsNullOrEmpty(MarketSearchCriteria) && string.IsNullOrEmpty(MailSearchCriteria))
             {
                  return companyDao.GetCompanyByName(NameSearchCriteria);

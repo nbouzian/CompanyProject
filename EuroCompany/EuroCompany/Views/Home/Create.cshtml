@@ -5,64 +5,68 @@
 
 }
 <div class="row-fluid">
-@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.ValidationSummary(true)
-        <div class="span6">
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row-fluid">
 
-            <fieldset>
-                <legend>Register new company</legend>
-                @Html.HiddenFor(model => model.ID)
-
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Name)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Name)
-                    @Html.ValidationMessageFor(model => model.Name)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Market)
-                </div>
-                <div class="editor-field">
-                    @Html.DropDownListFor(model => model.Market, ViewBag.ListeMarket as List<SelectListItem>)
-                    @Html.ValidationMessageFor(model => model.Market)
-                </div>
-
-                <div class="editor-label">
-                    @Html.LabelFor(model => model.Mail)
-                </div>
-                <div class="editor-field">
-                    @Html.EditorFor(model => model.Mail)
-                    @Html.ValidationMessageFor(model => model.Mail)
-                </div>
-            </fieldset>
-        </div>
-
-        <div class="span6">
-            <div class="row-fluid">
+            @Html.ValidationSummary(true)
+            <div class="span6">
 
                 <fieldset>
-                    <legend>Add company's logo</legend>
+                    <legend>Register new company</legend>
+                    @Html.HiddenFor(model => model.ID)
 
                     <div class="editor-label">
-                        @Html.LabelFor(model => model.Logo)
+                        @Html.LabelFor(model => model.Name)
                     </div>
-                       <div class="editor-field">
-                        @Html.TextBoxFor(model => model.Logo, new { type = "file" })
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
                     </div>
 
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Market)
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.Market, ViewBag.ListeMarket as List<SelectListItem>)
+                        @Html.ValidationMessageFor(model => model.Market)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Mail)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Mail)
+                        @Html.ValidationMessageFor(model => model.Mail)
+                    </div>
                 </fieldset>
             </div>
-            <div class="row-fluid">
 
-                <div id="btnSubmitContainer" class="span12 pull-left">
-                    <input type="submit" class="btn  btn-primary btn-block" value="Save new information" />
+            <div class="span6">
+                <div class="row-fluid">
+
+                    <fieldset>
+                        <legend>Add company's logo</legend>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Logo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.Logo, new { type = "file" })
+                        </div>
+
+                    </fieldset>
                 </div>
+
             </div>
         </div>
-}
+        <div class="row-fluid">
+
+            <div id="btnSubmitContainer" class="span12 pull-left">
+                <input type="submit" class="btn  btn-primary btn-block" value="Save new information" />
+            </div>
+        </div>
+    }
 
 </div>
 <div class="row-fluid">

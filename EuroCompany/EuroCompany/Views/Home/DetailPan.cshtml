@@ -37,7 +37,9 @@
     </div>
 
     <div class="span6">
-        <h4>Competitor in @Model.Market</h4>
+        <h4>Competitor in @Model.Market :</h4>
+        @if(Model.competitors.Count >0)
+        {
         <table class="table table-striped table-condensed">
             <thead>
                 <td>
@@ -58,6 +60,9 @@
                 </tr>
             }
         </table>
+        }else{
+        <h4>No other company on this market.</h4>
+        }
     </div>
 
 </div>

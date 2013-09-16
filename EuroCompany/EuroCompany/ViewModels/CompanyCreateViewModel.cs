@@ -13,12 +13,12 @@ namespace EuroCompany.ViewModels
         public int ID { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
-        [Display(Name = "Name",Prompt="Company's name")]
         public string Name { get; set; }
 
         public string Market { get; set; }
 
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Wrong email format")]
+
         public string Mail { get; set; }
 
         public HttpPostedFileBase Logo { get; set; }
@@ -26,7 +26,7 @@ namespace EuroCompany.ViewModels
 
         public CompanyCreateViewModel()
         {
-           
+
         }
 
     }
