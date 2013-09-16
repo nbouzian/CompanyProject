@@ -170,7 +170,8 @@ namespace EuroCompany.Controllers
         public ActionResult Create(CompanyCreateViewModel companyCreated)
         {
             CompanyServices companyService = new CompanyServices();
-
+            //ligne suivante corrige un petit probleme du modelstate .champ ID comme requis ( car non nullable (int) ) changer le type(int?) ne me semble pas trés coherent...
+            ModelState.Remove("ID");
             if (ModelState.IsValid)
             {
                 Company companyfromVM = new Company() { Name = companyCreated.Name, Mail = companyCreated.Mail, Market = companyCreated.Market };
